@@ -1,0 +1,59 @@
+
+<!-- Header -->
+<header>
+    <h1 class="logonm">HotelEase</h1>
+    <nav class="bar">
+      <a [routerLink]="['/home']" >Home</a>
+      <a [routerLink]="['/rooms']">Rooms</a>
+      <a [routerLink]="['/Booking']" class="book">Booking</a>
+      <a [routerLink]="['/staff']">Staff</a>
+      <a [routerLink]="['/profile']">profile</a>
+    </nav>
+    <!-- Show login if not logged in, logout if logged in -->
+    <a *ngIf="!isLogIn" routerLink="/login" class="btn-book">Login</a>
+    <a *ngIf="isLogIn" (click)="logout()" class="btn-book">Logout</a>
+  </header>
+
+
+
+
+  <div class="booking-container">
+  <!-- Example with *ngFor for multiple bookings -->
+  <div class="booking-card" *ngFor="let booking of bookings">
+    <div class="card-header">
+      <span class="room-badge">Room No: {{booking.roomNo}}</span>
+      <span class="status" [ngClass]="booking.status === 'Success' ? 'success' : 'fail'">
+        {{ booking.status }}
+      </span>
+    </div>
+
+    <div class="card-body">
+      <p><strong>Room Type:</strong> {{booking.roomType}}</p>
+      <p><strong>Guest Name:</strong> {{booking.name}}</p>
+      <p><strong>Mobile No:</strong> {{booking.mobileNo}}</p>
+      <p><strong>No. of Persons:</strong> {{booking.noOfPersons}}</p>
+      <p><strong>Check-In:</strong> {{booking.checkIn}}</p>
+      <p><strong>Check-Out:</strong> {{booking.checkOut}}</p>
+    </div>
+
+    <!-- ✅ Approved Stamp -->
+    <img *ngIf="booking.status === 'Success'"
+         src="assets/images/apro1.com.png"
+         alt="Approved"
+         class="approved-stamp"/>
+  </div>
+</div>
+
+
+
+ <!-- Footer -->
+  <footer>
+    <p>📍 HotelEase Headquarters, Mumbai, India</p>
+    <p>📞 +91 98765 43210 | ✉ info@hotelease.com</p>
+    <div class="social">
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </div>
+    <p>© 2025 HotelEase. All Rights Reserved.</p>
+  </footer>

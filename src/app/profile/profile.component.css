@@ -1,0 +1,235 @@
+/* Page Background */
+.profile-page {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+
+  /* allow page to grow taller than screen */
+  min-height: 100vh;
+  height: auto;  /* 👈 important: removes vh lock */
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 180px 20px 0px 20px; /* 👈 top 180px, bottom 60px (adds ~1 inch space) */
+
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-page:hover{  padding-top: 170px; transition: all 0.5s ease;  }
+
+
+/* Profile Card */
+.profile-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px 35px;
+  max-width: 950px;
+  width: 95%;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.55);
+  color: #f1f5f9;
+  animation: fadeIn 0.8s ease-in-out;
+}
+nav .pro{color: rgb(0, 183, 255);}
+/* Flex Layout for Left (image) + Right (form) */
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Left: Profile Image */
+.profile-left {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-img img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #06b6d4;
+  margin-top: -150px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-img img:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 18px rgba(124, 58, 237, 0.7);
+}
+.upload-btn {
+  background: transparent;
+  
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+  border: none;
+  color: #00aeff;
+  font-size: 2.0em;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.upload-btn span{ background: linear-gradient(90deg, red, orange, yellow,violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+
+
+/* Right: Profile Form */
+.profile-right {
+  flex: 2;
+}
+
+.profile-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #06b6d4;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.form-group {
+  flex: 1;
+}
+label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 30px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+input:focus {
+  border: 2px solid #06b6d4;
+  box-shadow: 0px 0px 8px rgba(6, 182, 212, 0.6);
+}
+
+/* Button */
+.update-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.update-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 20px rgba(124, 58, 237, 0.6);
+}
+
+/* Success Msg */
+.success-msg {
+  margin-top: 15px;
+  color: #22c55e;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Header / Navbar */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  /* background: rgba(0,0,0,0.65); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header h1 {
+  font-size: 1.8rem;
+  color: var(--accent-2);
+  letter-spacing: 1px;
+}
+.logonm{font-family:  Lucida handwriting;}
+nav a {
+  position: relative;
+  text-decoration: none; /* remove default underline */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 40px;
+  font-family: 'Playfair Display', serif;
+}
+/* create underline effect */
+/* underline effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -6px;   /* distance from text */
+  width: 50%;
+  height: 2.5px;    /* thickness of underline */
+  background-color: var(--accent-2); /* underline color */
+  color: skyblue;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+/* on hover show underline */
+/* on hover */
+nav a:hover::after {
+  transform: scaleX(1); /* expands left → right */
+}
+.btn-book {
+
+  padding: 10px 22px;
+  color: #ff0f0f;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.btn-book:hover {  background: linear-gradient(90deg, var(--accent-2), #0072ff); color: #ffffff; }
+
+
+
+
+/* Footer */
+footer {
+  background-color: var(--bg1);
+ color: #ccc;
+  padding: 10px 60px;
+  text-align: center;
+}
+footer p { margin: 8px 0; }
+.social a {
+  margin: 0 10px;
+  color: var(--accent-2);
+  font-weight: bold;
+}

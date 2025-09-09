@@ -1,0 +1,258 @@
+<div class="html">
+  <!-- Header -->
+<header>
+    <h1 class="logonm">HotelEase</h1>
+    <nav class="bar">
+      <a [routerLink]="['/home']" >Home</a>
+      <a [routerLink]="['/rooms']" class="room">Rooms</a>
+      <a [routerLink]="['/Booking']">Booking</a>
+      <a [routerLink]="['/staff']">Staff</a>
+      <a [routerLink]="['/profile']">profile</a>
+    </nav>
+    <!-- Show login if not logged in, logout if logged in -->
+    <a *ngIf="!isLogIn" routerLink="/login" class="btn-book">Login</a>
+    <a *ngIf="isLogIn" (click)="logout()" class="btn-book">Logout</a>
+  </header>
+
+
+<main class="container" id="gallery">
+  <!-- Hero Intro with anchor list of rooms -->
+  <section aria-label="Intro and rooms list">
+    <div class="hero">
+      <div>
+        <span class="tag" aria-label="Topic tag">Exclusive Rooms</span>
+        <h2>Explore the stylish spaces of Sylesh Priyum</h2>
+        <p>Browse a curated gallery of rooms. Click on a room in the anchor list to jump to its section and see details.</p>
+      </div>
+      <div style="display:flex;justify-content:center;align-items:center;">
+        <div style="width:100%;max-width:360px;height:180px;background:linear-gradient(135deg,#7c5cff22,#1ee7e322);border-radius:14px;border:1px solid rgba(255,255,255,.25);">
+            <img style="height: 180px; padding-left: 50px;" src="https://media.gettyimages.com/id/80612339/photo/portrait-of-hotel-staff.jpg?s=612x612&w=0&k=20&c=CV7rLpiPKdmTgDWn3cgR-wRZxd4fMXuFupH1al5gkdM=" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Anchor list of rooms (each item links to a section) -->
+    <ul class="room-list" id="rooms" aria-label="Rooms navigation">
+      <li><a href="#room-living-room">1st Class Rooms :</a></li>
+     
+    </ul>
+  </section>
+
+  <!-- Gallery grid (optional visual pills) -->
+  <!-- Gallery grid -->
+<section aria-label="Rooms gallery" id="gallery-section">
+  <ul class="gallery" id="gallery">
+    <!-- Living Room Card -->
+    <li class="card" id="card-living-room" (click)="openBooking('1st class','101','1RK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/182236344/photo/luxury-asian-style-pool-villa.jpg?s=612x612&w=0&k=20&c=TPi8PvBtk5UKpNT92QerTB7H97SSRRGQIWKhOJxB3Yk=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#ffd166;color:#1a1a1a;">Room No: 101</span>
+        <h3>1RK room</h3>
+        <p>Cozy, light-filled space with a modern silhouette and warm textures.</p>
+      </div>
+    </li>
+
+    <!-- Bedroom -->
+    <li class="card" id="card-bedroom" (click)="openBooking('1st class','102','1BHK')">
+      <div class="thumb"
+        style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#8ec5fc;color:#0b1220;">Room No: 102</span>
+        <h3>1BHK room</h3>
+        <p>Minimalist retreat with soft textiles and ambient lighting.</p>
+      </div>
+    </li>
+
+    <!-- Kitchen -->
+    <li class="card" id="card-kitchen" (click)="openBooking('1st class', '103','2BHK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/1089340358/photo/empty-modern-office-with-ceo-working-desk-room.jpg?s=612x612&w=0&k=20&c=DJsAUeOqjoQQnFdSO2pR1ZZsNhWPnSO0IRd0UnGUnE8=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#94f3e0;color:#072a2a;">Room No: 103</span>
+        <h3>2BHK room</h3>
+        <p>Sleek, functional space with premium finishes and clever storage.</p>
+      </div>
+    </li>
+
+    <!-- Study -->
+    <li class="card" id="card-studies" (click)="openBooking('1st class', '104','3BHK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/182238066/photo/asian-pool-villa.jpg?s=612x612&w=0&k=20&c=5wTUer7gyIXHoCLlNQ6gbUwQZRYEPdlvPji0wFiL3p8=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#f7a8e3;color:#2a0a1a;">Room No:104</span>
+        <h3>3BHK room</h3>
+        <p>Quiet workspace with ergonomic design and natural light.</p>
+      </div>
+    </li>
+
+    <!-- Bathroom -->
+    <li class="card" id="card-bathroom" (click)="openBooking('1st class', '105','4BHK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/624471104/photo/konig-albert-dining-room-first-class-north-german-lloyd-royal-mail-steamers-between-1890-and.jpg?s=612x612&w=0&k=20&c=sYdWvw1y8aSQb8wQigQu7dD_4Uqaid2nvxXBStnQLbc=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#9aff9a;color:#053a2a;">Room No: 105</span>
+        <h3>4BHK room</h3>
+        <p>Clean lines, spa-like tiles, and statement lighting.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- 2nd class rooms -->
+
+<br>
+<!-- Anchor list of rooms (each item links to a section) -->
+    <ul class="room-list" id="rooms" aria-label="Rooms navigation">
+      <li><a href="#room-living-room">2nd Class Rooms :</a></li>
+     
+    </ul>
+  
+
+  <!-- Gallery grid (optional visual pills) -->
+  <!-- Gallery grid -->
+<section aria-label="Rooms gallery" id="gallery-section">
+  <ul class="gallery" id="gallery">
+    <!-- Living Room Card -->
+    <li class="card" id="card-living-room" (click)="openBooking('2nd Class ','201','1RK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/2166525031/photo/bright-modern-apartment-interior-with-open-plan-layout.jpg?s=612x612&w=0&k=20&c=vL5pyic5TXUSfm08KGEgl727_nbRQLBwQYaalsusl9g=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#ffd166;color:#1a1a1a;">Room No: 201</span>
+        <h3>1RK room</h3>
+        <p>Cozy, light-filled space with a modern silhouette and warm textures.</p>
+      </div>
+    </li>
+
+    <!-- Bedroom -->
+    <li class="card" id="card-bedroom" (click)="openBooking('2nd class ','202','1BHK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/2048613442/photo/bright-contemporary-living-room-in-modern-apartment.jpg?s=612x612&w=0&k=20&c=ysmyPasBEq6zNvEPkmv6Sz7mwFbWOcDrisZXF6l2ltQ=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#8ec5fc;color:#0b1220;">Room No: 202</span>
+        <h3>1BHK room</h3>
+        <p>Minimalist retreat with soft textiles and ambient lighting.</p>
+      </div>
+    </li>
+
+    <!-- Kitchen -->
+    <li class="card" id="card-kitchen" (click)="openBooking('2nd class ', '203','2BHK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/175444504/photo/luxury-president-suite-with-city-view.jpg?s=612x612&w=0&k=20&c=IWMyEwFeKXl605Xlig3neaTu5uOxzkyqi0qirCd1TlE=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#94f3e0;color:#072a2a;">Room No: 203</span>
+        <h3>2BHK room</h3>
+        <p>Sleek, functional space with premium finishes and clever storage.</p>
+      </div>
+    </li>
+
+    <!-- Study -->
+    <li class="card" id="card-studies" (click)="openBooking('2nd class ', '204','3BHK')">
+      <div class="thumb"
+        style="background-image:url('https://media.gettyimages.com/id/1663270558/photo/modern-brightly-lit-living-room.jpg?s=612x612&w=0&k=20&c=8RsrluHqB-U0CrATY6t8omaje0bgh6xTlmaKcVKLQRk=');">
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#f7a8e3;color:#2a0a1a;">Room No:204</span>
+        <h3>3BHK room</h3>
+        <p>Quiet workspace with ergonomic design and natural light.</p>
+      </div>
+    </li>
+
+    
+  </ul>
+</section>
+
+
+<!-- Booking Popup Modal -->
+<!-- Booking Popup Modal -->
+<div class="modal" *ngIf="showBooking">
+  <div class="modal-content">
+    <span class="close" (click)="closeBooking()">&times;</span>
+    <h2 class="poph2">Book </h2> <!--add {{selectedRoom}}-->
+    
+    <!-- Booking Form -->
+    <form (ngSubmit)="submitBooking()" #bookingForm="ngForm">
+
+       <label class="pop">Room No:</label>
+       <input type="text" [(ngModel)]="bookingData.roomNo" name="roomNo" readonly />
+
+       <label class="pop">Room Type:</label>
+       <input type="text" [(ngModel)]="bookingData.roomType" name="roomType" readonly />
+
+      <label class="pop">Name:</label>
+      <input type="text" [(ngModel)]="bookingData.name" name="name" required />
+
+      <label class="pop">Mobile No:</label>
+      <input type="tel" [(ngModel)]="bookingData.mono" name="number" maxlength="10" required />
+
+      <label class="pop">No. of Person:</label>
+      <input type="number" [(ngModel)]="bookingData.noperson" name="person" min="1"
+             (input)="updatePrice()" required />
+
+      <label class="pop">Check-in Date:</label>
+      <input type="date" [(ngModel)]="bookingData.checkIn" name="checkIn"
+             (change)="updatePrice()" required />
+
+      <label class="pop">Check-out Date:</label>
+      <input type="date" [(ngModel)]="bookingData.checkOut" name="checkOut"
+             (change)="updatePrice()" required />
+
+      <!-- 🔥 Live price display -->
+      <div class="price-box">
+        <h3>Total Price: <span style="color:green;">₹{{bookingData.totalPrice}}</span></h3>
+      </div>
+
+      <button type="submit" [disabled]="!bookingForm.form.valid">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+
+ 
+</main>
+
+
+
+
+<!-- Footer -->
+  <footer>
+    <p>📍 HotelEase Headquarters, Mumbai, India</p>
+    <p>📞 +91 98765 43210 | ✉ info@hotelease.com</p>
+    <div class="social">
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </div>
+    <p>© 2025 HotelEase. All Rights Reserved.</p>
+  </footer>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

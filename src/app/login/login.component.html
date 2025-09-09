@@ -1,0 +1,93 @@
+
+
+<br><br><br>
+<div class="disp">
+  <div class="container">
+    <div class="hero">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#g)"/></svg>
+        <div>
+          <div style="font-weight:700;">HotelEase</div>
+          <div style="font-size:13px;color:var(--muted)">Smart Hotel Management System</div>
+        </div>
+      </div>
+      <h1 class="h1">Efficient. Modern. Reliable.</h1>
+      <p class="pp">A complete hotel management solution with room booking, guest records, billing, and staff management — built for smooth operations.</p>
+
+      <div class="features">
+        <div class="feature">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7L12 2z" fill="rgba(255,255,255,0.12)"/></svg>
+          <div>
+            <h4>Seamless Booking</h4>
+            <p>Easy room reservation system with instant updates.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.06)"/></svg>
+          <div>
+            <h4>Guest Management</h4>
+            <p>Store and track guest details with security.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="rgba(255,255,255,0.06)"/></svg>
+          <div>
+            <h4>Billing & Payments</h4>
+            <p>Automated invoices and multiple payment methods.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="rgba(255,255,255,0.09)" stroke-width="2" stroke-linecap="round"/></svg>
+          <div>
+            <h4>Staff Dashboard</h4>
+            <p>Manage staff roles, shifts, and performance easily.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="small">Built with ❤️ for smart hotels & resorts</footer>
+    </div>
+
+    <div class="card">
+      <div class="tabs" role="tablist">
+        <div class="tab active" data-target="login" role="tab">Login</div>
+        <div class="tab" data-target="register" role="tab"><a class="regi1" [routerLink]="['/reg']">Register</a></div>
+      </div>
+
+      <div id="login" class="panel">
+        <form class="form" id="loginForm" onsubmit="return handleLogin(event)" (ngSubmit)="login()">
+          <div class="field">
+            <label class="label" for="li-email">Email or phone</label>
+            <input class="input" [(ngModel)]="user.mono" id="li-email" name="identifier" type="text" required placeholder="you@domain.com or +91 98765...">
+          </div>
+          <div class="field">
+            <label for="li-pass">Password</label>
+            <div style="position:relative">
+              <input class="input" [(ngModel)]="user.pass" id="li-pass" [type]="showPassword ? 'text' : 'password'" name="password" type="password" required placeholder="••••••••">
+              <button type="button" (click)="togglePassword()" style="position:absolute;right:8px;top:8px;background:transparent;border:0;color:var(--muted);cursor:pointer">{{ showPassword ? 'Hide' : 'Show' }}</button>
+            </div>
+          </div>
+
+          <br>
+
+          <div style="margin-top:14px;display:flex;gap:12px">
+            <button class="btn" type="submit">Sign in</button>
+
+            <button type="button" class="ghost"(click)="fillDemo()">Demo Data</button>
+          </div>
+        </form>
+
+        <br><hr >
+
+        <p class="terms">By signing in, you agree to our 
+         <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+        </p>
+      </div>
+
+       
+
+    </div>
+  </div>
+</div>

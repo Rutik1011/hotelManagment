@@ -1,0 +1,87 @@
+<!-- Header -->
+<header>
+    <h1 class="logonm">HotelEase</h1>
+    <nav class="bar">
+      <a [routerLink]="['/home']" >Home</a>
+      <a [routerLink]="['/rooms']">Rooms</a>
+      <a [routerLink]="['/Booking']">Booking</a>
+      <a [routerLink]="['/staff']">Staff</a>
+      <a [routerLink]="['/profile']" class="pro">profile</a>
+    </nav>
+    <!-- Show login if not logged in, logout if logged in -->
+    <a *ngIf="!isLogIn" routerLink="/login" class="btn-book">Login</a>
+    <a *ngIf="isLogIn" (click)="logout()" class="btn-book">Logout</a>
+  </header>
+
+
+
+   <!-- Profile section start -->
+<div class="profile-page">
+  <div class="profile-card">
+    <div class="profile-content">
+      
+      <!-- Left: Profile Image -->
+      <div class="profile-left">
+        <div class="profile-img">
+          <img src="data:image/jpeg;base64,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" alt="Profile" />
+          <button type="button" class="upload-btn">Hello.... <br>&nbsp;<span>{{usernm}}</span></button>
+        </div>
+      </div>
+
+      <!-- Right: Profile Form -->
+      <div class="profile-right">
+        <h2 class="profile-title">My Profile</h2>
+
+        <form class="profile-form" (ngSubmit)="updateProfile()">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" [(ngModel)]="user.nm" name="nm" placeholder="Enter name" />
+            </div>
+            <div class="form-group">
+              <label>Email:</label>
+              <input type="email" [(ngModel)]="user.email" name="email" placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+              <label>Mobile No: </label>
+              <input type="number" [(ngModel)]="user.mono" name="number" placeholder="Enter No" maxlength="10" min="10" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Address:</label>
+              <input type="text" [(ngModel)]="user.addr" name="addr" placeholder="Enter address" />
+            </div>
+            <div class="form-group">
+              <label>Password:</label>
+              <input type="password" [(ngModel)]="user.pass" name="pass" placeholder="Enter password" />
+            </div>
+          </div>
+
+          <button type="submit" class="update-btn">Update Profile</button>
+        </form>
+
+        <!-- Success Msg -->
+        <p class="success-msg">{{message}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+  <footer>
+    <p>📍 HotelEase Headquarters, Mumbai, India</p>
+    <p>📞 +91 98765 43210 | ✉ info@hotelease.com</p>
+    <div class="social">
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </div>
+    <p>© 2025 HotelEase. All Rights Reserved.</p>
+  </footer>

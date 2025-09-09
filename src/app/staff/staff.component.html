@@ -1,0 +1,56 @@
+
+<!-- Header -->
+<header>
+    <h1 class="logonm">HotelEase</h1>
+    <nav class="bar">
+      <a [routerLink]="['/home']" >Home</a>
+      <a [routerLink]="['/rooms']">Rooms</a>
+      <a [routerLink]="['/Booking']">Booking</a>
+      <a [routerLink]="['/staff']" class="staf">Staff</a>
+      <a [routerLink]="['/profile']">profile</a>
+    </nav>
+    <!-- Show login if not logged in, logout if logged in -->
+    <a *ngIf="!isLogIn" routerLink="/login" class="btn-book">Login</a>
+    <a *ngIf="isLogIn" (click)="logout()" class="btn-book">Logout</a>
+  </header>
+
+
+
+
+
+
+
+
+<div class="staff-page">
+  <h2>Meet Our Staff</h2>
+
+  <div *ngFor="let group of staffGroups" class="staff-group">
+    <h3 class="group-title">{{ group.groupName }}</h3>
+
+    <div class="staff-grid">
+      <div class="staff-card" *ngFor="let member of group.members">
+        <img [src]="member.img" [alt]="member.name" />
+        <div class="staff-info">
+          <h3>{{ member.name }}</h3>
+          <h4>{{ member.role }}</h4>
+          <p>{{ member.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+  <footer>
+    <p>📍 HotelEase Headquarters, Mumbai, India</p>
+    <p>📞 +91 98765 43210 | ✉ info@hotelease.com</p>
+    <div class="social">
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </div>
+    <p>© 2025 HotelEase. All Rights Reserved.</p>
+  </footer>

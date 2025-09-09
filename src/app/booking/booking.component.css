@@ -1,0 +1,158 @@
+/* Header / Navbar */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  /* background: rgba(0,0,0,0.65); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header h1 {
+  font-size: 1.8rem;
+  color: var(--accent-2);
+  letter-spacing: 1px;
+}
+.logonm{font-family:  Lucida handwriting;}
+nav a {
+  position: relative;
+  text-decoration: none; /* remove default underline */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 40px;
+  font-family: 'Playfair Display', serif;
+}
+/* create underline effect */
+/* underline effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -6px;   /* distance from text */
+  width: 50%;
+  height: 2.5px;    /* thickness of underline */
+  background-color: var(--accent-2); /* underline color */
+  color: skyblue;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+nav .book{color: rgb(0, 183, 255);}
+/* on hover show underline */
+/* on hover */
+nav a:hover::after {
+  transform: scaleX(1); /* expands left → right */
+}
+.btn-book {
+
+  padding: 10px 22px;
+  color: #ff0f0f;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.btn-book:hover {  background: linear-gradient(90deg, var(--accent-2), #0072ff); color: #ffffff; }
+
+
+
+
+
+/* // Booking Container */
+.booking-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 160px 60px;
+}
+
+/* Card */
+.booking-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06); /* glass look */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.booking-card img{padding-right: 40px; padding-bottom: 40px;}
+.booking-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.room-badge {
+  background: var(--accent-2);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Status */
+.status {
+  padding: 5px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.status.success {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+}
+.status.fail {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+/* Body */
+.card-body p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.card-body strong {
+  color: #9ca3af; /* light gray for labels */
+}
+
+/* Approved Stamp */
+.approved-stamp {
+  position: absolute;
+  width: 120px;
+  right: -25px;
+  bottom: -25px;
+  transform: rotate(-15deg);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+
+
+/* Footer */
+footer {
+  background-color: var(--bg1);
+ color: #ccc;
+  padding: 10px 60px;
+  text-align: center;
+}
+footer p { margin: 8px 0; }
+.social a {
+  margin: 0 10px;
+  color: var(--accent-2);
+  font-weight: bold;
+}

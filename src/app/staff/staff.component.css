@@ -1,0 +1,164 @@
+.staff-page {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+  color: white;
+}
+
+.staff-page h2 {
+    padding-top: 50px;
+  font-size: 2.2rem;
+  color: #06b6d4;
+  margin-bottom: 0px;
+}
+
+.staff-group {
+  margin-bottom: 50px;
+}
+
+.group-title {
+  font-size: 1.6rem;
+  margin: 20px 0;
+  color: #7c3aed;
+  border-bottom: 2px solid #06b6d4;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ✅ 2 columns layout */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.staff-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  min-height: 450px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.5);
+}
+
+.staff-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #06b6d4;
+}
+
+.staff-info h3 {
+  margin: 5px 0;
+  font-size: 1.3rem;
+  color: #7c3aed;
+}
+
+.staff-info h4 {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #06b6d4;
+}
+
+.staff-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+
+
+
+
+
+
+
+/* Header / Navbar */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  /* background: rgba(0,0,0,0.65); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header h1 {
+  font-size: 1.8rem;
+  color: var(--accent-2);
+  letter-spacing: 1px;
+}
+.logonm{font-family:  Lucida handwriting;}
+nav a {
+  position: relative;
+  text-decoration: none; /* remove default underline */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 40px;
+  font-family: 'Playfair Display', serif;
+}
+/* create underline effect */
+/* underline effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -6px;   /* distance from text */
+  width: 50%;
+  height: 2.5px;    /* thickness of underline */
+  background-color: var(--accent-2); /* underline color */
+  color: skyblue;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+nav .staf{color: rgb(0, 175, 244);}
+/* on hover show underline */
+/* on hover */
+nav a:hover::after {
+  transform: scaleX(1); /* expands left → right */
+}
+.btn-book {
+
+  padding: 10px 22px;
+  color: #ff0f0f;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.btn-book:hover {  background: linear-gradient(90deg, var(--accent-2), #0072ff); color: #ffffff; }
+
+
+
+
+/* Footer */
+footer {
+  background-color: var(--bg1);
+ color: #ccc;
+  padding: 10px 60px;
+  text-align: center;
+}
+footer p { margin: 8px 0; }
+.social a {
+  margin: 0 10px;
+  color: var(--accent-2);
+  font-weight: bold;
+}

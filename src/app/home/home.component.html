@@ -1,0 +1,134 @@
+
+  <!-- Header -->
+  <header>
+    <h1 class="logonm">HotelEase</h1>
+    <nav class="bar">
+      <a href="#" class="hm">Home</a>
+      <a [routerLink]="['/rooms']">Rooms</a>
+      <a [routerLink]="['/Booking']">Booking</a>
+      <a [routerLink]="['/staff']">Staff</a>
+      <a [routerLink]="['/profile']">profile</a>
+    </nav>
+    <!-- Show login if not logged in, logout if logged in -->
+    <a *ngIf="!isLogIn" routerLink="/login" class="btn-book">Login</a>
+    <a *ngIf="isLogIn" (click)="logout()" class="btn-book" style="cursor: pointer;">Logout</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome {{usernm}} to  <span>HotelEase</span></h2>
+      <p>Your Smart Hotel Management & Luxury Hospitality Platform</p>
+      <a href="#" class="btn-primary">Explore Dashboard</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Choose HotelEase?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>🏨 Seamless Booking</h3>
+        <p>Easy reservations with instant confirmation.</p>
+      </div>
+      <div class="feature-card">
+        <h3>👥 Guest Management</h3>
+        <p>Track guest details securely and efficiently.</p>
+      </div>
+      <div class="feature-card">
+        <h3>💳 Billing & Payments</h3>
+        <p>Automated invoices with multiple payment options.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📊 Staff Dashboard</h3>
+        <p>Manage roles, shifts, and staff performance.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- vip card -->
+<div class="vip-card">
+  <!-- Left: VIP Image -->
+  <div class="vip-img">
+    <img src="assets/images/ss.png" alt="VIP Guest">
+  </div>
+
+  <!-- Right: Description -->
+  <div class="vip-info">
+    <h2>Special Guest: Sir. Ratan Tata</h2>
+    <p><strong>Visited Date:</strong> 2nd September 2025</p>
+    <p><strong>Room:</strong> Presidential Suite (Room No. 101)</p>
+    <p><strong>Purpose:</strong> Business Conference</p>
+    <p class="highlight">“An extraordinary stay with world-class service at HotelEase.”</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2 class="h2">📸 Guest Memories at <span> Our Hotel</span></h2>
+
+  
+    <div class="gallery-item">
+      <img src="https://media.gettyimages.com/id/469758648/photo/spa-therapist-serving-fresh-juice-to-two-middle-eastern-women.jpg?s=612x612&w=0&k=20&c=syLeIlShglVZzBrVhQJKe_Gg9rKluQyzXp-VD1tQZNw=" alt="Couple enjoying stay">
+      <div class="overlay">Family Enjoying Stay</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.gettyimages.com/id/1266364936/photo/family-has-fun-at-outdoor-carnival-setting.jpg?s=612x612&w=0&k=20&c=n8UpAe4DQnjiWgsfDfZORU32Y--ilPAwHJ6JnMP08T0=" alt="Family on vacation">
+      <div class="overlay">Family Vacation</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.gettyimages.com/id/1169554079/photo/contented-hotel-diner.jpg?s=612x612&w=0&k=20&c=eWnEpwtp41z7aFWzEcaTWkE3Hec-3mn14VyJvmPGgD8=" alt="Guests at pool">
+      <div class="overlay">Guest enjoying food</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.gettyimages.com/id/1428674946/photo/busy-front-desk-at-hotel.jpg?s=612x612&w=0&k=20&c=6RscVaa9QRt1vAtNuxnilexQ0Xb3TNyBUBVsr0XvXiY=" alt="Friends dining">
+      <div class="overlay">Our Riception</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Business guests">
+      <div class="overlay">Business Guests</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.gettyimages.com/id/1363344003/photo/wide-shot-of-friends-and-family-dining-at-long-table-at-luxury-tropical-villa-during-wedding.jpg?s=612x612&w=0&k=20&c=zSj_-u1nt7F_k6yAbCZ-mzufYE_2XOgkXsqlaCjTsNM=" alt="Guests dining">
+      <div class="overlay">Wide shot of friends and family dining</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.gettyimages.com/id/669319514/photo/indian-concierge-welcome-guest-at-hotel-entrance-agra-india.jpg?s=612x612&w=0&k=20&c=pMBAWO2O6HZFWWsj450RY8WjooNr4db9MUEsZw6ofJA=" alt="Happy guest">
+      <div class="overlay">Indian Concierge Welcome Guest at Hotel  </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80" alt="Family at hotel">
+      <div class="overlay">Family Memories</div>
+    </div>
+  
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>📍 HotelEase Headquarters, Mumbai, India</p>
+    <p>📞 +91 98765 43210 | ✉ info@hotelease.com</p>
+    <div class="social">
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </div>
+    <p>© 2025 HotelEase. All Rights Reserved.</p>
+  </footer>
+
+
+
