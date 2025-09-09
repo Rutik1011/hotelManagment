@@ -1,27 +1,76 @@
-# LoginRegisterModule
+# 🏨 Hotel Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+A full-stack **Hotel Management Web Application** built with **Angular** (frontend) and **Spring Boot** (backend) using **Spring Data JPA** and **MySQL** as the database.  
+The system supports **CRUD operations**, **user authentication (Login & Registration)**, and **online room booking with Razorpay payment gateway**.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- 🔑 **User Authentication**
+  - Register new users
+  - Login & Logout
+  - Session management using local storage
 
-Run `ng generate component component-name` to generate a new component. You can also run `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 🏠 **Hotel Management**
+  - Manage Rooms (Add / Update / Delete / View)
+  - Booking functionality with check-in / check-out dates
+  - Staff Management
 
-## Build
+- 💳 **Payments**
+  - Integrated **Razorpay Payment Gateway**
+  - Supports **UPI, Cards, Net Banking, and Wallets**
+  - Secure and real-time transaction update
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 📊 **CRUD Operations**
+  - Rooms
+  - Bookings
+  - Staff
+  - Users
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Tech Stack
 
-## Running end-to-end tests
+### Frontend
+- Angular 
+- HTML5, CSS3, TypeScript
+-  Custom Styling
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Backend
+- Java 17+
+- Spring Boot
+- Spring Data JPA
+- REST APIs
 
-## Further help
+### Database
+- MySQL
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Payment Integration
+- Razorpay Payment Gateway
+
+---
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+-  Angular CLI
+- JDK 17+
+- MySQL Server
+- Maven
+- IDEs: **VS Code** (Frontend) and **Eclipse  (Backend)
+
+---
+
+### 1️⃣ Backend Setup (Spring Boot)
+1. Clone the repository and open the backend project in Eclipse.
+2. Configure `application.properties`:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db
+   spring.datasource.username=root
+   spring.datasource.password=yourpassword
+   spring.jpa.hibernate.ddl-auto=update
+
+   # Razorpay Keys
+   razorpay.key_id=your_key_id
+   razorpay.key_secret=your_key_secret
